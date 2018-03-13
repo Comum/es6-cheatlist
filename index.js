@@ -72,9 +72,9 @@ console.log('\nRunning:');
 console.log('---------------------------------');
 console.log('\nClass example:');
 console.log(`class User {
-	constructor(name, age) {
-		this.name = name ? name : 'user';
-		this.age = age ? age : '5';
+	constructor(options) {
+		this.name = options.name ? options.name : 'user';
+		this.age = options.age ? options.age : '5';
 	}
 
 	getData() {
@@ -82,16 +82,16 @@ console.log(`class User {
 	}
 }
 
-let user = new User('Miguel', 27);
-let defaultUser = new User();
+let user = new User({name: 'Miguel', age:27});
+let defaultUser = new User({});
 user.getData();
 defaultUser.getData();`);
 console.log('\nRunning:');
 
 class User {
-	constructor(name, age) {
-		this.name = name ? name : 'user';
-		this.age = age ? age : '5';
+	constructor(options) {
+		this.name = options.name ? options.name : 'user';
+		this.age = options.age ? options.age : '5';
 	}
 
 	getData() {
@@ -99,7 +99,7 @@ class User {
 	}
 }
 
-let user = new User('Miguel', 27);
-let defaultUser = new User();
+let user = new User({name: 'Miguel', age:27});
+let defaultUser = new User({});
 user.getData();
 defaultUser.getData();
