@@ -39,3 +39,29 @@ console.log('\nRunning:');
 	// console.log(letVariable); // throws error!
 	console.log(varVariable);
 })();
+
+console.log('---------------------------------');
+console.log('\nSpread and destruction:');
+console.log(`(function () {
+	let name = ['Miguel', 'Coelho'];
+	let fullName = [...name, 'Ribeiro'];
+	let [firstName, secondName, thirdName] = fullName;
+
+	console.log(\`name: \${name}\`);
+	console.log(\`fullName: \${fullName}\`);
+	console.log(\`firstName: \${firstName}\`);
+	console.log(\`secondName: \${secondName}\`);
+	console.log(\`thirdName: \${thirdName}\`);
+})();`);
+console.log('\nRunning:');
+(function () {
+	let name = ['Miguel', 'Coelho'];
+	let fullName = [...name, 'Ribeiro'];
+	let [firstName, secondName, thirdName] = fullName;
+
+	console.log(`name: ${name}`);
+	console.log(`fullName: ${fullName}`);
+	console.log(`firstName: ${firstName}`);
+	console.log(`secondName: ${secondName}`);
+	console.log(`thirdName: ${thirdName}`);
+})();
