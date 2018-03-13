@@ -12,6 +12,7 @@ console.log(`(function () {
 	console.log(\`name: \${name}\`);
 })();`);
 console.log('\nRunning:');
+
 (function () {
 	const name = 'Miguel';
 
@@ -30,6 +31,7 @@ console.log(`(function () {
 	console.log(varVariable);
 })();`);
 console.log('\nRunning:');
+
 (function () {
 	if (1) {
 		let letVariable = 'this will not be accesible outside';
@@ -54,6 +56,7 @@ console.log(`(function () {
 	console.log(\`thirdName: \${thirdName}\`);
 })();`);
 console.log('\nRunning:');
+
 (function () {
 	let name = ['Miguel', 'Coelho'];
 	let fullName = [...name, 'Ribeiro'];
@@ -65,3 +68,38 @@ console.log('\nRunning:');
 	console.log(`secondName: ${secondName}`);
 	console.log(`thirdName: ${thirdName}`);
 })();
+
+console.log('---------------------------------');
+console.log('\nClass example:');
+console.log(`class User {
+	constructor(name, age) {
+		this.name = name ? name : 'user';
+		this.age = age ? age : '5';
+	}
+
+	getData() {
+		console.log(\`User is \${this.name} and he is \${this.age} yeard old.\`);
+	}
+}
+
+let user = new User('Miguel', 27);
+let defaultUser = new User();
+user.getData();
+defaultUser.getData();`);
+console.log('\nRunning:');
+
+class User {
+	constructor(name, age) {
+		this.name = name ? name : 'user';
+		this.age = age ? age : '5';
+	}
+
+	getData() {
+		console.log(`User is ${this.name} and he is ${this.age} yeard old.`);
+	}
+}
+
+let user = new User('Miguel', 27);
+let defaultUser = new User();
+user.getData();
+defaultUser.getData();
